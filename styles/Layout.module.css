@@ -50,7 +50,7 @@
     .footer {
         flex-direction: column-reverse;
         gap: 3em;
-        padding-top: 2em;
+        padding: 2rem 1.5rem;
     }
 }
   
