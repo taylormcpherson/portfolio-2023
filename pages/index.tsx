@@ -1,5 +1,4 @@
 import { Layout } from "../components/layout";
-import { Section } from "../components/section";
 import { Card } from "../components/card";
 
 import styles from "../styles/Home.module.css";
@@ -69,17 +68,15 @@ const projects = [
 export default function Home() {
   return (
     <Layout>
-      <Section>
-        <div className={styles.container}>
-          <h1 className={textStyles.title}>
-            Frontend software engineer at Hightouch
-          </h1>
-          <h2 className={textStyles.description}>
-            building accessible, performant, and delightful tools for us humans on the internet.
-          </h2>
-        </div>
-      </Section>
-      <Section>
+      <section className={styles.container}>
+        <h1 className={textStyles.title}>
+          Frontend software engineer at Hightouch
+        </h1>
+        <h2 className={textStyles.description}>
+          building accessible, performant, and delightful tools for us humans on the internet.
+        </h2>
+      </section>
+      <section>
         <h2 className={textStyles.leadIn}>
           selected works
         </h2>
@@ -88,7 +85,7 @@ export default function Home() {
             <Card key={card.title} {...card} />
           ))}
         </ul>
-      </Section>
+      </section>
     </Layout>
   )
 }

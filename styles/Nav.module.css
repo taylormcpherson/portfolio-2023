@@ -6,20 +6,8 @@
     width: 100%;
     position: sticky;
     top: 0;
-    background: rgb(13, 13, 13);
     padding: 2rem 3rem;
     z-index: 10;
-}
-  
-.container:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    height: 20px;
-    z-index: 2;
-    background: linear-gradient(to bottom, rgb(13, 13, 13), transparent);
 }
 
 .name {
