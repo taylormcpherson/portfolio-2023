@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Layout } from "../components/layout";
 import styles from '../styles/About.module.css';
 import textStyles from "../styles/Typography.module.css";
@@ -5,6 +6,7 @@ import textStyles from "../styles/Typography.module.css";
 export default function About() {
     return (
       <Layout>
+        <Helmet title="About | Taylor McPherson" />
         <section className={styles.container}>
           <h1 className={textStyles.title}
               data-sal="slide-up"

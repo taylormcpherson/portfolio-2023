@@ -17,7 +17,7 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
   
     <Helmet htmlAttributes={{ lang: 'en-US' }}> 
       <title>Taylor McPherson</title>
-      <meta name="description" content="Frontend software engineer specializing in responsive, accessible, user-first web applications." />
+      <meta name="description" content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications." />
       <meta charSet="utf-8" />
       <link
         rel="icon" 
@@ -27,6 +27,7 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
             🥳
             </text></svg>"
       />
+      <meta property="og:image" content="/meta.png" />
     </Helmet>
   
     <main>

@@ -11,6 +11,7 @@ import SutherlandImage from "../public/images/sutherland.png";
 import PernImage from "../public/images/pern.png";
 import BlogImage from "../public/images/great-blog.png";
 import CmhfImage from "../public/images/cmhf.png";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -68,6 +69,7 @@ const projects = [
 export default function Home() {
   return (
     <Layout>
+      <Helmet title="Work | Taylor McPherson" />
       <section className={styles.container}>
         <h1 className={textStyles.title}>
           Frontend software engineer at Hightouch

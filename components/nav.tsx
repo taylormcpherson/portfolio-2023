@@ -3,7 +3,7 @@ import styles from "../styles/Nav.module.css";
 
 export const NavBar = () => (
   <header className={styles.container}>
-    <h2 className={styles.name}>Taylor McPherson</h2>
+    <h2 className={styles.name}>taylor mcpherson</h2>
 
     <nav aria-label="Primary">
       <ul className={styles.list}>
