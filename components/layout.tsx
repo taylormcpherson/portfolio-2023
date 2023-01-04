@@ -27,7 +27,7 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
             🥳
             </text></svg>"
       />
-      <meta property="og:image" content="/public/meta.png" />
+      <meta property="og:image" content="https://taylormcpherson.dev/meta.png" />
     </Helmet>
   
     <main>
