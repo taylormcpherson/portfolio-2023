@@ -12,8 +12,11 @@
 
 .container:before {
   --size: 100px;
-  --speed: 32s;
+
+  --duration: 32s;
   --easing: linear;
+  --iteration: infinite;
+  --direction: alternate-reverse;
 
   content: '';
   position: absolute;
@@ -25,15 +28,60 @@
   background-image: linear-gradient(rgb(0, 162, 255), rgb(0, 255, 255));
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   opacity: 0.3;
-
-  animation: dance var(--speed) var(--easing) alternate-reverse infinite;
   transition: all 0.25s ease-in-out;
   z-index: 2;
+
+  animation: dance var(--duration) var(--easing) var(--iteration) var(--direction) var(--state, running) ;
+}
+
+.container.isPaused:before {
+  --state: paused;
+}
+
+.button {
+  width: 12px;
+  height: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.15s ease;
+}
+
+.button[data-state="play"] .icon {
+  margin-left: 2px;
+}
+
+.button:not(.isVisible) {
+  display: none;
+} 
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: rgb(13, 13, 13);
+}
+
+.icon {
+  font-size: 0.8em;
 }
 
 @media (min-width: 600px) {
   .container:before {
     --size: 200px;
+  }
+  
+  .button {
+    width: 16px;
+    height: 16px;
+    padding: 20px;
+  }
+
+  .icon {
+    font-size: 1em;
   }
 }
 

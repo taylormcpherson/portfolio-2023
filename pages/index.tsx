@@ -1,9 +1,10 @@
+import { Helmet } from "react-helmet";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+
 import { Layout } from "../components/layout";
 import { Card } from "../components/card";
-
-import styles from "../styles/Home.module.css";
-import textStyles from "../styles/Typography.module.css";
-import cardStyles from "../styles/Card.module.css";
 
 import HightouchImage from "../public/images/hightouch.png";
 import HeiferImage from "../public/images/heifer.png";
@@ -11,7 +12,11 @@ import SutherlandImage from "../public/images/sutherland.png";
 import PernImage from "../public/images/pern.png";
 import BlogImage from "../public/images/great-blog.png";
 import CmhfImage from "../public/images/cmhf.png";
-import { Helmet } from "react-helmet";
+
+import styles from "../styles/Home.module.css";
+import textStyles from "../styles/Typography.module.css";
+import cardStyles from "../styles/Card.module.css";
+
 
 const projects = [
   {
@@ -67,16 +72,34 @@ const projects = [
 ];
 
 export default function Home() {
+  const [isPaused, setPausedState] = useState<boolean>(false);
+
   return (
     <Layout>
       <Helmet title="Work | Taylor McPherson" />
-      <section className={styles.container}>
+      <section className={`${styles.container} ${isPaused ? styles.isPaused : ''}`}>
         <h1 className={textStyles.title}>
           Frontend software engineer at Hightouch
         </h1>
         <h2 className={textStyles.description}>
           building accessible, performant, and delightful tools for us humans on the internet.
         </h2>
+        <button
+          aria-label="Pause animation"
+          className={`${styles.button} ${!isPaused ? styles.isVisible : ''}`}
+          data-state="pause"
+          onClick={()=>setPausedState(true)}
+        >
+          <FontAwesomeIcon className={styles.icon} icon={faPause} />
+        </button>
+        <button
+          aria-label="Play animation"
+          className={`${styles.button} ${isPaused ? styles.isVisible : ''}`}
+          data-state="play"
+          onClick={()=>setPausedState(false)}
+        >
+          <FontAwesomeIcon className={styles.icon} icon={faPlay} />
+        </button>
       </section>
       <section>
         <h2 className={textStyles.leadIn}>

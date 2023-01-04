@@ -1,21 +1,18 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { FC, ReactNode } from 'react'
+import Head from "next/head";
+import Link from "next/link";
+import { FC, ReactNode } from "react";
 import {Helmet} from "react-helmet";
-import { NavBar } from '../components/nav'
-import styles from '../styles/Layout.module.css'
-import { Open_Sans } from '@next/font/google'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-
-const openSans = Open_Sans({ subsets: ['latin'] });
+import { NavBar } from "../components/nav";
+import styles from "../styles/Layout.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>  
 (
   <div className={styles.container}>
   
-    <Helmet htmlAttributes={{ lang: 'en-US' }}> 
+    <Helmet htmlAttributes={{ lang: "en-US" }}> 
       <title>Taylor McPherson</title>
       <meta name="description" content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications." />
       <meta charSet="utf-8" />

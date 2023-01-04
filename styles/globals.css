@@ -23,6 +23,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
 ul {
   list-style: none;
 }

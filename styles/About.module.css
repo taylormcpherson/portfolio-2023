@@ -15,7 +15,7 @@
 
 
 .container:before {
-    --size: 200px;
+    --size: 100px;
     --speed: 30s;
     --easing: linear;
   
