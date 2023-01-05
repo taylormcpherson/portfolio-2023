@@ -38,7 +38,14 @@
   --state: paused;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
 .button {
+  position: relative;
   width: 12px;
   height: 12px;
   padding: 16px;
@@ -56,7 +63,8 @@
   margin-left: 2px;
 }
 
-.button:not(.isVisible) {
+.button:not(.isVisible),
+.buttonLabel:not(.isVisible) {
   display: none;
 } 
 
@@ -67,6 +75,17 @@
 
 .icon {
   font-size: 0.8em;
+}
+
+.buttonLabel {
+  font-size: 0.88em;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.button:hover ~ .buttonLabel,
+.button:focus ~ .buttonLabel {
+  opacity: 1;
 }
 
 @media (min-width: 600px) {

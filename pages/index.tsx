@@ -77,6 +77,7 @@ export default function Home() {
   return (
     <Layout>
       <Helmet title="Work | Taylor McPherson" />
+      
       <section className={`${styles.container} ${isPaused ? styles.isPaused : ''}`}>
         <h1 className={textStyles.title}>
           Frontend software engineer at Hightouch
@@ -84,23 +85,40 @@ export default function Home() {
         <h2 className={textStyles.description}>
           building accessible, performant, and delightful tools for us humans on the internet.
         </h2>
-        <button
-          aria-label="Pause animation"
-          className={`${styles.button} ${!isPaused ? styles.isVisible : ''}`}
-          data-state="pause"
-          onClick={()=>setPausedState(true)}
-        >
-          <FontAwesomeIcon className={styles.icon} icon={faPause} />
-        </button>
-        <button
-          aria-label="Play animation"
-          className={`${styles.button} ${isPaused ? styles.isVisible : ''}`}
-          data-state="play"
-          onClick={()=>setPausedState(false)}
-        >
-          <FontAwesomeIcon className={styles.icon} icon={faPlay} />
-        </button>
+        <div className={styles.buttonContainer}>
+          <button
+            aria-labelledby="pause-label"
+            className={`${styles.button} ${!isPaused ? styles.isVisible : ''}`}
+            data-state="pause"
+            onClick={()=>setPausedState(true)}
+          >
+            <FontAwesomeIcon className={styles.icon} icon={faPause} />
+          </button>
+          <p
+            id="pause-label"
+            className={`${styles.buttonLabel} ${!isPaused ? styles.isVisible : ''}`}
+          >
+            pause animation
+          </p>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button
+            aria-labelledby="play-label"
+            className={`${styles.button} ${isPaused ? styles.isVisible : ''}`}
+            data-state="play"
+            onClick={()=>setPausedState(false)}
+          >
+            <FontAwesomeIcon className={styles.icon} icon={faPlay} />
+          </button>
+          <p
+            id="play-label"
+            className={`${styles.buttonLabel} ${isPaused ? styles.isVisible : ''}`}
+          >
+            play animation
+          </p>
+        </div>
       </section>
+
       <section>
         <h2 className={textStyles.leadIn}>
           selected works
