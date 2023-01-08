@@ -11,9 +11,24 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>  
 (
   <div className={styles.container}>
-  
-    <Helmet htmlAttributes={{ lang: "en-US" }}> 
-      <title>Taylor McPherson</title>
+    <Helmet 
+      htmlAttributes={{ lang: "en-US" }}
+      title="Taylor McPherson"
+      meta={[
+        {
+          property: "og:title",
+          content: "Taylor McPherson"
+        },
+        {
+          property: "og:description",
+          content: "Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications."
+        },
+        {
+          property: "og:image",
+          content: "/meta.png"
+        }
+      ]}
+    > 
       <meta name="description" content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications." />
       <meta charSet="utf-8" />
       <link
@@ -24,9 +39,6 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
             🥳
             </text></svg>"
       />
-      <meta property="og:title" content="Taylor McPherson" />
-      <meta property="og:description" content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications." />
-      <meta property="og:image" content="/meta.png" />
     </Helmet>
   
     <main>
