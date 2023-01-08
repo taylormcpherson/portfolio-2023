@@ -1,12 +1,13 @@
-import Head from "next/head";
-import Link from "next/link";
 import { FC, ReactNode } from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import Link from "next/link";
 import { NavBar } from "../components/nav";
-import styles from "../styles/Layout.module.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+import styles from "../styles/Layout.module.css";
 
 export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>  
 (
@@ -14,22 +15,20 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
     <Helmet 
       htmlAttributes={{ lang: "en-US" }}
       title="Taylor McPherson"
-      meta={[
-        {
-          property: "og:title",
-          content: "Taylor McPherson"
-        },
-        {
-          property: "og:description",
-          content: "Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications."
-        },
-        {
-          property: "og:image",
-          content: "/meta.png"
-        }
-      ]}
     > 
-      <meta name="description" content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications." />
+      <meta
+        property="og:title"
+        content="Taylor McPherson"
+      />
+      <meta
+        name="description"
+        content="Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications."
+        key="desc"
+      />
+      <meta
+        property="og:image"
+        content="https://taylormcpherson.dev/meta.png"
+      />
       <meta charSet="utf-8" />
       <link
         rel="icon" 
