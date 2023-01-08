@@ -30,7 +30,7 @@ export default function About() {
               data-sal-delay="300"
               data-sal-easing="ease-in-out"
           > 
-            Hi 👋 I&apos;m Taylor.<br />
+            Hi 👋 I&apos;m Taylor,<br />
             a frontend software engineer <br />
             with a heart for social impact.
           </h1>
