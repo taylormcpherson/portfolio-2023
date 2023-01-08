@@ -6,7 +6,23 @@ import textStyles from "../styles/Typography.module.css";
 export default function About() {
     return (
       <Layout>
-        <Helmet title="About | Taylor McPherson" />
+        <Helmet
+          title="About | Taylor McPherson"
+          meta={[ 
+            {
+              property: "og:title",
+              content: "About | Taylor McPherson"
+            },
+            {
+              property: "og:description",
+              content: "Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications."
+            },
+            {
+              property: "og:image",
+              content: "https://taylormcpherson.dev/meta.png"
+            }
+          ]}
+        />
         <section className={styles.container}>
           <h1 className={textStyles.title}
               data-sal="slide-up"

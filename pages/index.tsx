@@ -76,7 +76,23 @@ export default function Home() {
 
   return (
     <Layout>
-      <Helmet title="Work | Taylor McPherson" />
+      <Helmet
+        title="Work | Taylor McPherson"
+        meta={[ 
+          {
+            property: "og:title",
+            content: "About | Taylor McPherson"
+          },
+          {
+            property: "og:description",
+            content: "Frontend software engineer specializing in accessible, responsive, performant, and delightful user-first web applications."
+          },
+          {
+            property: "og:image",
+            content: "https://taylormcpherson.dev/meta.png"
+          }
+        ]}
+      />
       
       <section className={`${styles.container} ${isPaused ? styles.isPaused : ''}`}>
         <h1 className={textStyles.title}>
