@@ -17,7 +17,7 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
       title="Taylor McPherson"
     > 
       <meta
-        property="og:title"
+        name="og:title"
         content="Taylor McPherson"
       />
       <meta
@@ -26,7 +26,7 @@ export const Layout: FC<Readonly<{children: ReactNode}>> = ({children}) =>
         key="desc"
       />
       <meta
-        property="og:image"
+        name="og:image"
         content="https://taylormcpherson.dev/meta.png"
       />
       <meta charSet="utf-8" />
