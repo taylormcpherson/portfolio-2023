@@ -18,7 +18,7 @@
   --iteration: infinite;
   --direction: alternate-reverse;
 
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   top: -30%;
@@ -31,7 +31,8 @@
   transition: all 0.25s ease-in-out;
   z-index: 2;
 
-  animation: dance var(--duration) var(--easing) var(--iteration) var(--direction) var(--state, running) ;
+  animation: dance var(--duration) var(--easing) var(--iteration)
+    var(--direction) var(--state, running);
 }
 
 .container.isPaused:before {
@@ -66,7 +67,7 @@
 .button:not(.isVisible),
 .buttonLabel:not(.isVisible) {
   display: none;
-} 
+}
 
 .button:hover {
   background: rgba(255, 255, 255, 0.8);
@@ -92,7 +93,7 @@
   .container:before {
     --size: 200px;
   }
-  
+
   .button {
     width: 16px;
     height: 16px;
@@ -115,7 +116,7 @@
     transform: rotate(0deg);
     left: -10%;
   }
-  50%{
+  50% {
     top: 75%;
     left: 25%;
   }

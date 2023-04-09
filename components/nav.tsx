@@ -1,11 +1,11 @@
-import { useState } from "react";
-import NextLink from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import styles from "../styles/Nav.module.css";
+import { useState } from "react"
+import NextLink from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
+import styles from "../styles/Nav.module.css"
 
 export const NavBar = () => {
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const [isOpen, setOpen] = useState<boolean>(false)
   return (
     <header className={styles.container}>
       <p className={styles.name}>taylor mcpherson</p>
@@ -13,35 +13,39 @@ export const NavBar = () => {
       <nav aria-label="Primary">
         <ul className={styles.list}>
           <li>
-            <NextLink className={styles.link} href="/">work</NextLink>
+            <NextLink className={styles.link} href="/">
+              work
+            </NextLink>
           </li>
-          <li> 
-            <NextLink className={styles.link} href="/about/">about</NextLink>
+          <li>
+            <NextLink className={styles.link} href="/about/">
+              about
+            </NextLink>
           </li>
-          <li> 
+          <li>
             <NextLink
               className={styles.link}
-              href="https://drive.google.com/file/d/1AGOSDubE4JUKPQNkMQ9xXoYC78PuUrgI/view?usp=share_link" 
+              href="https://drive.google.com/file/d/1AGOSDubE4JUKPQNkMQ9xXoYC78PuUrgI/view?usp=share_link"
               rel="noreferrer"
               target="_blank"
             >
               resume
-          </NextLink>
+            </NextLink>
           </li>
         </ul>
         <button
           aria-label="Open navigation menu"
-          className={`${styles.button} ${!isOpen ? styles.isVisible : ''}`}
+          className={`${styles.button} ${!isOpen ? styles.isVisible : ""}`}
           data-state="open"
-          onClick={()=>setOpen(true)}
+          onClick={() => setOpen(true)}
         >
           <FontAwesomeIcon className={styles.icon} icon={faBars} />
         </button>
         <button
           aria-label="Close navigation menu"
-          className={`${styles.button} ${isOpen ? styles.isVisible : ''}`}
+          className={`${styles.button} ${isOpen ? styles.isVisible : ""}`}
           data-state="close"
-          onClick={()=>setOpen(false)}
+          onClick={() => setOpen(false)}
         >
           <FontAwesomeIcon className={styles.icon} icon={faClose} />
         </button>
@@ -49,7 +53,9 @@ export const NavBar = () => {
         <nav
           aria-label="Mobile primary"
           aria-hidden={!isOpen}
-          className={`${styles.mobileContainer} ${isOpen ? styles.isVisible : ''}`}
+          className={`${styles.mobileContainer} ${
+            isOpen ? styles.isVisible : ""
+          }`}
         >
           <ul className={styles.mobileList}>
             <li>
@@ -60,7 +66,7 @@ export const NavBar = () => {
                 work
               </NextLink>
             </li>
-            <li> 
+            <li>
               <NextLink
                 className={`${styles.link} ${styles.mobileLink}`}
                 href="/about/"
@@ -68,15 +74,15 @@ export const NavBar = () => {
                 about
               </NextLink>
             </li>
-            <li> 
+            <li>
               <NextLink
                 className={`${styles.link} ${styles.mobileLink}`}
-                href="https://drive.google.com/file/d/1AGOSDubE4JUKPQNkMQ9xXoYC78PuUrgI/view?usp=share_link" 
+                href="https://drive.google.com/file/d/1AGOSDubE4JUKPQNkMQ9xXoYC78PuUrgI/view?usp=share_link"
                 rel="noreferrer"
                 target="_blank"
               >
                 resume
-            </NextLink>
+              </NextLink>
             </li>
           </ul>
         </nav>
